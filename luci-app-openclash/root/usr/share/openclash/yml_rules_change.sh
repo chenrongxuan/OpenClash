@@ -136,7 +136,9 @@ yml_other_rules_get()
    config_get "Proxy" "$section" "Proxy" ""
    config_get "Youtube" "$section" "Youtube" ""
    config_get "Apple" "$section" "Apple" ""
+   config_get "Scholar" "$section" "Scholar" ""
    config_get "Netflix" "$section" "Netflix" ""
+   config_get "Disney" "$section" "Disney" ""
    config_get "Spotify" "$section" "Spotify" ""
    config_get "Steam" "$section" "Steam" ""
    config_get "AdBlock" "$section" "AdBlock" ""
@@ -179,7 +181,9 @@ if [ "$2" != "0" ]; then
 	 || [ -z "$(grep -F "$Proxy" /tmp/Proxy_Group)" ]\
 	 || [ -z "$(grep -F "$Youtube" /tmp/Proxy_Group)" ]\
 	 || [ -z "$(grep -F "$Apple" /tmp/Proxy_Group)" ]\
+	 || [ -z "$(grep -F "$Scholar" /tmp/Proxy_Group)" ]\
 	 || [ -z "$(grep -F "$Netflix" /tmp/Proxy_Group)" ]\
+	 || [ -z "$(grep -F "$Disney" /tmp/Proxy_Group)" ]\
 	 || [ -z "$(grep -F "$Spotify" /tmp/Proxy_Group)" ]\
 	 || [ -z "$(grep -F "$Steam" /tmp/Proxy_Group)" ]\
 	 || [ -z "$(grep -F "$AdBlock" /tmp/Proxy_Group)" ]\
@@ -226,7 +230,9 @@ if [ "$2" != "0" ]; then
        	    .gsub(/,Proxy$/, ',$Proxy#d')
        	    .gsub(/,YouTube$/, ',$Youtube#d')
        	    .gsub(/,Apple$/, ',$Apple#d')
+       	    .gsub(/,Scholar$/, ',$Scholar#d')
        	    .gsub(/,Netflix$/, ',$Netflix#d')
+       	    .gsub(/,Disney$/, ',$Disney#d')
        	    .gsub(/,Spotify$/, ',$Spotify#d')
        	    .gsub(/,Steam$/, ',$Steam#d')
        	    .gsub(/,AdBlock$/, ',$AdBlock#d')
@@ -243,7 +249,9 @@ if [ "$2" != "0" ]; then
        	    .gsub!(/: \"Proxy\"/,': \"$Proxy#d\"')
        	    .gsub!(/: \"YouTube\"/,': \"$Youtube#d\"')
        	    .gsub!(/: \"Apple\"/,': \"$Apple#d\"')
+       	    .gsub!(/: \"Scholar\"/,': \"$Scholar#d\"')
        	    .gsub!(/: \"Netflix\"/,': \"$Netflix#d\"')
+       	    .gsub!(/: \"Disney\"/,': \"$Disney#d\"')
        	    .gsub!(/: \"Spotify\"/,': \"$Spotify#d\"')
        	    .gsub!(/: \"Steam\"/,': \"$Steam#d\"')
        	    .gsub!(/: \"AdBlock\"/,': \"$AdBlock#d\"')
